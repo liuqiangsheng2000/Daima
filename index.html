@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>参会人员统计</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      color: #f04155;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #218838;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 20px;
+      color: #28a745;
+    }
+    /* 添加背景 */
+    body {
+      background-image: url('image/background.jpg'); /* 或者设置背景图像 */
+      background-size: cover; /* 让背景图像覆盖整个页面 */
+      background-repeat: no-repeat; /* 不重复背景图像 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Registration statistics for participants of the first International Young Scholars Forum on Civil Engineering</h1>
+  <form id="registrationForm">
+    <label for="name">Your name：</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="school">School：</label>
+    <input type="text" id="school" name="school" required>
+
+    <label for="phone">Phone：</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="identity">身份：</label>
+    <select id="identity" name="identity" required>
+      <option value="学生">Student</option>
+      <option value="教师">Teacher</option>
+      <option value="其他">Others</option>
+    </select>
+
+    <input type="submit" value="提交">
+  </form>
+
+  <div class="success-message" id="successMessage">恭喜您已成功报名！</div>
+
+  <script>
+    document.getElementById('registrationForm').onsubmit = function (event) {
+      event.preventDefault(); // 阻止表单默认提交
+
+      // 这里可以添加代码来处理表单数据，如发送到服务器
+
+      // 显示成功消息
+      document.getElementById('successMessage').style.display = 'block';
+      document.getElementById('registrationForm').reset(); // 清空表单
+    };
+  </script>
+
+</body>
+
+</html>
